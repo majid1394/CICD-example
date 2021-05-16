@@ -10,18 +10,18 @@ pipeline {
 
 stages {
 	stage('checkout from github') {
-	step{
+	steps{
 	checkout scm
 	}
 	}
 	stage('Package') {
-         	step{
+         	steps{
 	sh 'mvn clean package -DskipTests'
 	checkout scm
 	}
 	}
 	stage('create Docker Image') {
-	step{
+	steps{
 		script {
 		docker_image=docker.build("${env.DOCKER_IMAGE}",'-f./Dockerfile.')
 		}
