@@ -22,7 +22,7 @@ stages {
 	stage('create Docker Image') {
 	steps{
 		script {
-		docker_image=docker.build("${env.DOCKER_IMAGE}",'-f./Dockerfile.')
+		docker_image=docker.build("${env.DOCKER_IMAGE}",'-f ./Dockerfile.')
 		}
     	}
 	}	
