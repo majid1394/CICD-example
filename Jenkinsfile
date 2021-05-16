@@ -17,7 +17,6 @@ stages {
 	stage('Package') {
          	steps{
 	sh 'mvn clean package -DskipTests'
-	checkout scm
 	}
 	}
 	stage('create Docker Image') {
