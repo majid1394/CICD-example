@@ -16,7 +16,8 @@ stages {
 	}
 	stage('Package') {
          	steps{
-	bat 'set +e mvn clean package -DskipTest'
+	set +e
+	bat 'mvn clean package -DskipTest'
 	}
 	}
 	stage('create Docker Image') {
