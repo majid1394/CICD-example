@@ -16,7 +16,6 @@ stages {
 	}
 	stage('Package') {
          	steps{
-	set +e
 	bat 'mvn clean package -DskipTest'
 	}
 	}
